@@ -1,0 +1,127 @@
+Problem 1
+/* Palindrome check for a number */
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<"entered number : "<<n<<endl;
+    int rev=0;
+    int x=n;
+    while(x!=0)
+    {
+        int r=x%10;
+        rev=10*rev+r;
+        x=x/10;
+    }
+    if(rev==n)
+    cout<<n<<" is a palindrome number";
+    else
+    cout<<n<<" is not a palindrome number";
+    return 0;
+}
+
+INPUT:
+1221
+12321
+123421
+
+OUPUT:
+entered number : 1221
+1221 is a palindrome number
+
+entered number : 12321
+12321 is a palindrome number
+
+entered number : 123421
+123421 is not a palindrome number
+
+Problem 2
+/* Calculator implementation */
+#include<iostream>
+using namespace std;
+int main()
+{
+    char ch;
+    cin>>ch;
+    cout<<"entered operator: "<<ch<<endl;
+    int x,y;
+    cin>>x>>y;
+    cout<<"entered numbers are : "<<x<<" and "<<y<<endl;
+    switch(ch)
+    {
+        case '+':
+        cout<<"sum of numbers are : "<<x+y;
+        break;
+        case '-':
+        cout<<"difference between numbers are : "<<x-y;
+        break;
+        case '*':
+        cout<<"product of numbers are : "<<x*y;
+        break;
+        case '/':
+        cout<<"division of numbers are : "<<x/y;
+        break;
+        default:
+        cout<<"invalid operator";
+        break;
+    }
+    return 0;
+}
+
+INPUT:
+*
+10 10
+
+OUTPUT:
+entered operator: *
+entered numbers are : 10 and 10
+product of numbers are : 100
+
+Problem 3
+/* Armstrong number */
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<"entered number : "<<n<<endl;
+    int digit_count=0;
+    int x=n;
+    while(x!=0)
+    {
+        digit_count++;
+        x=x/10;
+    }
+    int s=0;
+    int y=n;
+    while(y!=0)
+    {
+        int r=y%10;
+        s=s+pow(r,digit_count);
+        y=y/10;
+    }
+    if(s==n)
+    cout<<n<<" is an armstrong number";
+    else
+    cout<<n<<" is not an armstrong number";
+    return 0;
+}
+
+INPUT:
+1634
+153
+120
+
+OUTPUT:
+entered number : 1634
+1634 is an armstrong number
+
+entered number : 153
+153 is an armstrong number
+
+entered number : 120
+120 is not an armstrong number
